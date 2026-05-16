@@ -1,0 +1,48 @@
+Gateway:
+  Name: Llm_Security_Gateway
+  Version: "1.0"
+  Host: "127.0.0.1"
+  Port: 8000
+
+Thresholds:
+  Rule_Block: 0.4
+  Semantic_Block: 0.7
+  Final_Risk_Block: 0.6
+  Pii_Weight: 0.1
+  Secret_Weight: 0.15
+  Min_Confidence: 0.5
+
+Languages:
+  Supported:
+    - en
+    - ur
+    - ko
+    - ar
+    - hi
+  Default: en
+
+Policy:
+  Allow_Threshold: 0.3
+  Mask_Threshold: 0.4
+  Block_Threshold: 0.7
+
+Logging:
+  Audit_Log_Path: "Results/Audit_Log.jsonl"
+  Log_Level: "INFO"
+
+Presidio:
+  Supported_Languages:
+    - en
+  Cnic_Pattern: "\\d{5}-\\d{7}-\\d"
+  Student_Id_Pattern: "[A-Z]{2}\\d{2}-[A-Z]{3}-\\d{3}"
+  Api_Key_Pattern: "[A-Za-z0-9_\\-]{20,}"
+  Context_Words:
+    - email
+    - phone
+    - cnic
+    - student
+    - id
+    - api
+    - key
+    - token
+    - password
