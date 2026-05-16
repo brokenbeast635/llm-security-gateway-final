@@ -172,7 +172,7 @@ Edit `Config/Gateway_Config.yaml`:
 Thresholds:
   Rule_Block: 0.4          # Rule score at which a BLOCK is triggered
   Semantic_Block: 0.7      # Semantic score at which a BLOCK is triggered
-  Final_Risk_Block: 0.7    # Combined final risk BLOCK threshold
+  Final_Risk_Block: 0.6    # Combined final risk BLOCK threshold
   Pii_Weight: 0.1          # Added to final_risk when PII is present
   Secret_Weight: 0.15      # Added when secret-type PII (API_KEY etc.) is found
 ```
